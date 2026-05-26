@@ -1,1 +1,12 @@
 <h1>Mis Tareas</h1>
+
+<%= form_with model: @task do |f| %>
+  <%= f.text_field :description, placeholder: "Descripci'on de la tarea" %>
+  <%= f.submit %>
+<% end %>
+
+<ul>
+<% @tasks.each do |task| %>
+  <li><%= task.description %></li>
+<% end %>
+</ul>
