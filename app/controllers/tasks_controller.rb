@@ -6,6 +6,7 @@ class TasksController < ApplicationController
 
   def create
     task = Task.new task_params
+    task.user = current_user
     if task.save
         redirect_to tasks_path
     else
