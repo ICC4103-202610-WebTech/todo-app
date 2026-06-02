@@ -7,6 +7,10 @@ class TaskPolicy < ApplicationPolicy
     true
   end
 
+  def complete?
+    record.user == user
+  end
+
   class Scope < ApplicationPolicy::Scope
     def resolve
       scope.where(user: user)

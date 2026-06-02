@@ -17,6 +17,17 @@ class TasksController < ApplicationController
     end
   end
 
+  def complete
+    task = Task.find params[:task_id]
+    authorize task
+    errrir
+    if task.update status: :completed
+      redirect_to tasks_path
+    else
+      redirect_to tasks_path
+    end
+  end
+
   private
   def task_params
   params.require(:task).permit(:description)

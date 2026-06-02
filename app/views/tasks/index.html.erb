@@ -10,7 +10,7 @@
 <div class="row">
   <ul class="list-group">
   <% @tasks.each do |task| %>
-    <li class="list-group-item"><%= task.description %></li>
+    <li class="list-group-item"><%= link_to task.display_description, task_complete_path(task) %></li>
   <% end %>
   </ul>
 </div>

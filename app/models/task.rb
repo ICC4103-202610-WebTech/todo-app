@@ -9,4 +9,8 @@ class Task < ApplicationRecord
     in_progress: 1,
     completed: 2
   }
+
+  def display_description
+    "#{description} - #{status}"
+  end
 end
