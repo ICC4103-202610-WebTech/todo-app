@@ -1,12 +1,16 @@
 <h1>Mis Tareas</h1>
 
-<%= form_with model: @task do |f| %>
-  <%= f.text_field :description, placeholder: "Descripci'on de la tarea" %>
-  <%= f.submit %>
-<% end %>
+<div class="row mb-3">
+  <%= form_with model: @task do |f| %>
+    <%= f.text_field :description, placeholder: "Descripci'on de la tarea", class: "form-control" %>
+    <%= f.submit "Guardar", class: "btn btn-primary" %>
+  <% end %>
+</div>
 
-<ul>
-<% @tasks.each do |task| %>
-  <li><%= task.description %></li>
-<% end %>
-</ul>
+<div class="row">
+  <ul class="list-group">
+  <% @tasks.each do |task| %>
+    <li class="list-group-item"><%= task.description %></li>
+  <% end %>
+  </ul>
+</div>
